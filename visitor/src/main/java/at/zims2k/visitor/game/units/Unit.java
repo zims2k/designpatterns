@@ -1,8 +1,8 @@
 package at.zims2k.visitor.game.units;
 
-import at.zims2k.visitor.game.actions.UnitAction;
+import at.zims2k.visitor.game.actions.UnitVisitor;
 
 public interface Unit {
     /** visitor pattern implementation */
-    void accept(UnitAction unitAction);
+    void accept(UnitVisitor unitAction);
 }

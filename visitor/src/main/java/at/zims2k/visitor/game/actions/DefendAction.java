@@ -1,11 +1,23 @@
 package at.zims2k.visitor.game.actions;
 
-import at.zims2k.visitor.game.units.AbstractUnit;
+import at.zims2k.visitor.game.units.Archer;
+import at.zims2k.visitor.game.units.Cavalry;
+import at.zims2k.visitor.game.units.Spearman;
 
-public class DefendAction implements UnitAction {
+public class DefendAction implements UnitVisitor {
 
     @Override
-    public void visitAbstractUnit(AbstractUnit unit) {
+    public void visitArcher(Archer archer) {
+
+    }
+
+    @Override
+    public void visitCavalry(Cavalry cavalry) {
+
+    }
+
+    @Override
+    public void visitSpearman(Spearman spearman) {
 
     }
 }
