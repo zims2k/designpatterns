@@ -6,11 +6,6 @@ import at.zims2k.visitor.game.units.Spearman;
 
 public class DefendAction implements UnitAction {
     @Override
-    public String toString() {
-        return this.getClass().getSimpleName();
-    }
-
-    @Override
     public void visitArcher(Archer archer) {
 
     }
