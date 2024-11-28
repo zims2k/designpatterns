@@ -1,11 +1,8 @@
 package at.zims2k.visitor.game.actions;
 
-import at.zims2k.visitor.game.units.Archer;
-import at.zims2k.visitor.game.units.Cavalry;
-import at.zims2k.visitor.game.units.Spearman;
+import at.zims2k.visitor.game.units.AbstractUnit;
 
 public interface UnitAction {
-    void visitArcher(Archer archer);
-    void visitCavalry(Cavalry cavalry);
-    void visitSpearman(Spearman spearman);
+
+    void visitAbstractUnit(AbstractUnit unit);
 }
