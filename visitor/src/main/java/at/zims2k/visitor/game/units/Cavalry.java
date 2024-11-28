@@ -1,15 +1,8 @@
 package at.zims2k.visitor.game.units;
 
-import at.zims2k.visitor.game.actions.UnitAction;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class Cavalry implements Unit {
+public class Cavalry extends AbstractUnit {
     private final String horseName;
-
-    @Override
-    public void accept(UnitAction unitActionVisitor) {
-        unitActionVisitor.visitCavalry(this);
-    }
-
 }
