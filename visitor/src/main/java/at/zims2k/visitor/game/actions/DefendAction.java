@@ -4,7 +4,7 @@ import at.zims2k.visitor.game.units.Archer;
 import at.zims2k.visitor.game.units.Cavalry;
 import at.zims2k.visitor.game.units.Spearman;
 
-public class MoveActionVisitor implements UnitActionVisitor {
+public class DefendAction implements UnitAction {
     @Override
     public void visitArcher(Archer archer) {
 
