@@ -57,10 +57,11 @@ public class Util {
 
     static void printTextFileContents(List<FileElement> fileElements) {
         fileElements.stream()
-                .filter(fileElement -> fileElement instanceof TextFile)
-                .forEach(fileElement -> {
-                    System.out.printf("File %s: ", ((TextFile) fileElement).getName());
-                    System.out.println(((TextFile) fileElement).getContent());
+                .filter(TextFile.class::isInstance)
+                .map(TextFile.class::cast)
+                .forEach(textFile -> {
+                    System.out.printf("File %s: ", textFile.getName());
+                    System.out.println(textFile.getContent());
                 });
     }
 }
