@@ -38,7 +38,7 @@ public class Main {
 
         System.out.println();
         System.out.println("============================================================");
-        System.out.println("Visiting all files:");
+        System.out.println("Visiting ALL files:");
         System.out.println("============================================================");
         System.out.println();
 
@@ -60,7 +60,7 @@ public class Main {
 
         System.out.println();
         System.out.println("============================================================");
-        System.out.println("Visiting with the ReverseTextFileContentVisitor:");
+        System.out.println("Visiting ALL files with the ReverseTextFileContentVisitor:");
         System.out.println("============================================================");
         System.out.println();
 
