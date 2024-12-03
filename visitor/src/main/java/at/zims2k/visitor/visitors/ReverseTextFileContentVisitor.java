@@ -12,16 +12,7 @@ public class ReverseTextFileContentVisitor implements FileVisitor {
 
     @Override
     public void visit(TextFile textFile) {
-        String originalContent = textFile.getContent();
-
-        StringBuilder sb = new StringBuilder();
-        for (int i = originalContent.length() - 1; i >= 0; i--) {
-            sb.append(originalContent.charAt(i));
-        }
-
-        String modifiedContent = sb.toString();
-
-        textFile.setContent(modifiedContent);
+        textFile.setContent(new StringBuilder(textFile.getContent()).reverse().toString());
     }
 
     @Override
