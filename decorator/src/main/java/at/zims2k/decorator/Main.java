@@ -8,12 +8,7 @@ import java.util.List;
 
 /**
  * Demonstrates the decorator pattern. The example demonstrates how each decorator
- * extends the functionality via a wrapper mechanism. E.g. in this case here:
- * <ul>
- *     <li>{@link DefaultNotifierWrapper} does nothing</li>
- *     <li>{@link MailNotifierDecorator} extends the {@link DefaultNotifierWrapper}</li>
- *     <li>{@link YoutrackNotifierDecorator} extends the {@link MailNotifierDecorator}</li>
- * </ul>
+ * extends the functionality via a wrapper mechanism.
  * The advantage of this pattern here is, that each implementation of a notifier resides on it's own and is close
  * to modification.
  */
