@@ -22,6 +22,10 @@ import java.util.List;
  *     {@link FirewalledNotifierDecorator} is simply added as a wrapping object without the need of touching existing
  *     classes or mess with the inheritance of classes or something else.
  * </p>
+ * <p>
+ *     You now may e.g. extend functionality, by wrapping e.g. the {@link FirewalledNotifierDecorator} in a "whatever"
+ *     decorator and add functionality there without modifying other classes except this main class.
+ * </p>
  */
 public class Main {
     public static void main(String[] args) {
