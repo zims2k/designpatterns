@@ -21,4 +21,9 @@ public abstract class BaseNotifierDecorator implements INotifier {
     public String getUsername() {
         return wrappedINotifier.getUsername();
     }
+
+    @Override
+    public INotifier getWrappedNotifier() {
+        return wrappedINotifier;
+    }
 }

@@ -20,4 +20,9 @@ public class CompositeNotifier implements INotifier {
     public String getUsername() {
         return notifiers.isEmpty() ? "" : notifiers.getFirst().getUsername();
     }
+
+    @Override
+    public INotifier getWrappedNotifier() {
+        return null;
+    }
 }

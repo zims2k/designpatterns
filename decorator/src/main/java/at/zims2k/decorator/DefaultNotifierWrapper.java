@@ -20,4 +20,9 @@ public class DefaultNotifierWrapper implements INotifier {
     public String getUsername() {
         return userName;
     }
+
+    @Override
+    public INotifier getWrappedNotifier() {
+        return this;
+    }
 }
