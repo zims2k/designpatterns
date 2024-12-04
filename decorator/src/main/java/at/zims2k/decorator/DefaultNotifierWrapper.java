@@ -2,8 +2,12 @@ package at.zims2k.decorator;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Acts as a notifier, that does not notify in any way. Just to provide a notifier to provide the userName of the
+ * software that is represented by this gradle module.
+ */
 @RequiredArgsConstructor
-public class RootNotifier implements INotifier {
+public class DefaultNotifierWrapper implements INotifier {
 
     private final String userName;
 

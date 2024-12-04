@@ -3,12 +3,14 @@ package at.zims2k.decorator;
 import at.zims2k.decorator.decorators.MailNotifierDecorator;
 import at.zims2k.decorator.decorators.YoutrackNotifierDecorator;
 
+import java.util.List;
+
 /**
- * Demonstrates the decorator pattern. It is not a very, very good example, but it demonstrates how each decorator
+ * Demonstrates the decorator pattern. The example demonstrates how each decorator
  * extends the functionality via a wrapper mechanism. E.g. in this case here:
  * <ul>
- *     <li>{@link RootNotifier} does nothing</li>
- *     <li>{@link MailNotifierDecorator} extends the {@link RootNotifier}</li>
+ *     <li>{@link DefaultNotifierWrapper} does nothing</li>
+ *     <li>{@link MailNotifierDecorator} extends the {@link DefaultNotifierWrapper}</li>
  *     <li>{@link YoutrackNotifierDecorator} extends the {@link MailNotifierDecorator}</li>
  * </ul>
  * The advantage of this pattern here is, that each implementation of a notifier resides on it's own and is close
@@ -17,15 +19,13 @@ import at.zims2k.decorator.decorators.YoutrackNotifierDecorator;
 public class Main {
     public static void main(String[] args) {
 
-        RootNotifier rootNotifier = new RootNotifier("userA");
+        DefaultNotifierWrapper defaultNotifierWrapper = new DefaultNotifierWrapper("userA");
 
-        MailNotifierDecorator mailDecorator = new MailNotifierDecorator(rootNotifier, "mail.example.com");
-        @SuppressWarnings("UnnecessaryLocalVariable")
-        YoutrackNotifierDecorator youtrackDecorator = new YoutrackNotifierDecorator(mailDecorator, "youtrack.example.com");
+        List<INotifier> notifiers = List.of(
+                new MailNotifierDecorator(defaultNotifierWrapper, "mail.example.com"),
+                new YoutrackNotifierDecorator(defaultNotifierWrapper, "youtrack.example.com")
+        );
 
-        @SuppressWarnings("UnnecessaryLocalVariable")
-        INotifier notifier = youtrackDecorator;
-
-        notifier.send("My message");
+        notifiers.forEach(notifier -> notifier.send("My message"));
     }
 }
