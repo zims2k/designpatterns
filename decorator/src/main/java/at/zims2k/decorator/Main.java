@@ -1,5 +1,6 @@
 package at.zims2k.decorator;
 
+import at.zims2k.decorator.composite.CompositeNotifier;
 import at.zims2k.decorator.decorators.MailNotifierDecorator;
 import at.zims2k.decorator.decorators.YoutrackNotifierDecorator;
 
@@ -26,6 +27,7 @@ public class Main {
                 new YoutrackNotifierDecorator(defaultNotifierWrapper, "youtrack.example.com")
         );
 
-        notifiers.forEach(notifier -> notifier.send("My message"));
+        INotifier compositeNotifier = new CompositeNotifier(notifiers);
+        compositeNotifier.send("My message");
     }
 }
