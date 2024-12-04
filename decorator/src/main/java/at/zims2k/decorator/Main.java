@@ -11,6 +11,8 @@ import at.zims2k.decorator.decorators.YoutrackNotifierDecorator;
  *     <li>{@link MailNotifierDecorator} extends the {@link RootNotifier}</li>
  *     <li>{@link YoutrackNotifierDecorator} extends the {@link MailNotifierDecorator}</li>
  * </ul>
+ * The advantage of this pattern here is, that each implementation of a notifier resides on it's own and is close
+ * to modification.
  */
 public class Main {
     public static void main(String[] args) {
